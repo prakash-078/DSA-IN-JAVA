@@ -14,7 +14,11 @@ class Solution {
                 {
                     closest=sum;
                 }
-                if(sum<target)
+                if(sum==target)
+                {
+                    return sum;
+                }
+                else if(sum<target)
                 {
                     left++;
                 }
