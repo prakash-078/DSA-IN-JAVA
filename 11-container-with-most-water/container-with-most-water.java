@@ -5,9 +5,9 @@ class Solution {
         int max=0;
         while(left<right)
         {
-            int w=right-left;
             int h=Math.min(height[left],height[right]);
-            int area=w*h;
+            int w=right-left;
+            int area=h*w;
             max=Math.max(area,max);
             if(height[left]<=height[right])
             {
@@ -19,5 +19,6 @@ class Solution {
             }
         }
         return max;
+        
     }
 }
