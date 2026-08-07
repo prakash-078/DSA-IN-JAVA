@@ -9,11 +9,13 @@ class Solution {
         {
             leftmax[i]=Math.max(leftmax[i-1],height[i]);
         }
+
         rightmax[n-1]=height[n-1];
         for(int i=n-2;i>=0;i--)
         {
             rightmax[i]=Math.max(rightmax[i+1],height[i]);
         }
+
         int water=0;
         for(int i=0;i<n;i++)
         {
