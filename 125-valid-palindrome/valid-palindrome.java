@@ -6,6 +6,7 @@ class Solution {
         {
             char ch1=s.charAt(left);
             char ch2=s.charAt(right);
+
             if(!Character.isLetterOrDigit(ch1))
             {
                 left++;
@@ -14,24 +15,23 @@ class Solution {
             else
             {
                 ch1=Character.toLowerCase(ch1);
-                
-            }
-            if(!Character.isLetterOrDigit(ch2))
-            {
-                right--;
-                continue;
-            }
-            else{
-                ch2=Character.toLowerCase(ch2);
             }
 
-            if(ch1!=ch2)
-            {
-                return false;
-            }
-            left++;
-            right--;
-
+           if(!Character.isLetterOrDigit(ch2))
+           {
+              right--;
+              continue;
+           }
+           else
+           {
+            ch2=Character.toLowerCase(ch2);
+           }
+           if(ch1!=ch2)
+           {
+            return false;
+           }
+           left++;
+           right--;
         }
         return true;
     }
