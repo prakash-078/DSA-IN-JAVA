@@ -7,7 +7,7 @@ class Solution {
             {
                 return false;
             }
-            set.add(n);
+           
             n=squareOfDigit(n);
         }
         return true;
