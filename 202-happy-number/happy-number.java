@@ -8,12 +8,11 @@ class Solution {
                 return false;
             }
             set.add(n);
-            n=sumOfSquare(n);
+            n=squareOfDigit(n);
         }
         return true;
     }
-
-    public int sumOfSquare(int n)
+    public int squareOfDigit(int n)
     {
         int sum=0;
         while(n>0)
