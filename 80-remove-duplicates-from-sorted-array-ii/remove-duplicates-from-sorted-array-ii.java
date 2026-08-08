@@ -5,20 +5,19 @@ class Solution {
         {
             return n;
         }
-
-    int k=2;
-    for(int i=2;i<n;i++)
-    {
-        if(nums[i]==nums[k-2])
+        int k=2;
+        for(int i=2;i<n;i++)
         {
-            continue;
+            if(nums[i]==nums[k-2])
+            {
+                continue;
+            }
+            else
+            {
+                nums[k]=nums[i];
+                k++;
+            }
         }
-        else
-        {
-            nums[k]=nums[i];
-            k++;
-        }
-    }
-    return k;
+        return k;
     }
 }
