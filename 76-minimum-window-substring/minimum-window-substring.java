@@ -9,7 +9,6 @@ class Solution {
         {
             freq[ch]++;
         }
-
         int left=0;
         int matched=0;
         int minlength=Integer.MAX_VALUE;
@@ -24,11 +23,10 @@ class Solution {
             freq[rightchar]--;
             while(matched==t.length())
             {
-                if(right-left+1<minlength)
+                if(right-left+1 < minlength)
                 {
                     minlength=right-left+1;
                     start=left;
-
                 }
                 char leftchar=s.charAt(left);
                 freq[leftchar]++;
