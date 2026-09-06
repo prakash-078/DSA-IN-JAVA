@@ -5,7 +5,7 @@ class Solution {
         int currentmin=nums[0];
         int min=nums[0];
         int totalsum=nums[0];
-        int wrappingmax;
+        int wrappingsum;
 
         for(int i=1;i<nums.length;i++)
         {
@@ -19,7 +19,8 @@ class Solution {
         {
             return max;
         }
-        wrappingmax=totalsum-min;
-        return Math.max(max,wrappingmax);
+        wrappingsum=totalsum-min;
+        return Math.max(wrappingsum,max);
+       
     }
 }
