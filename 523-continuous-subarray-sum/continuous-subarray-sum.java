@@ -8,6 +8,7 @@ class Solution {
       {
         prefix[i]=nums[i]+prefix[i-1];
         rem[i]=prefix[i]%k;
+
       }
       Map<Integer,Integer> map=new HashMap<>();
       map.put(0,-1);
