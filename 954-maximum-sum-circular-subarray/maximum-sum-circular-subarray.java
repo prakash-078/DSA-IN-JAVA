@@ -4,12 +4,11 @@ class Solution {
         int max=nums[0];
         int currentmin=nums[0];
         int min=nums[0];
+        int circularmax;
         int totalsum=nums[0];
-        int wrappingsum;
-
         for(int i=1;i<nums.length;i++)
         {
-            currentmax=Math.max(nums[i],currentmax+nums[i]);
+            currentmax=Math.max(nums[i],nums[i]+currentmax);
             max=Math.max(max,currentmax);
             currentmin=Math.min(nums[i],currentmin+nums[i]);
             min=Math.min(min,currentmin);
@@ -19,8 +18,8 @@ class Solution {
         {
             return max;
         }
-        wrappingsum=totalsum-min;
-        return Math.max(wrappingsum,max);
+        circularmax=totalsum-min;
+        return Math.max(circularmax,max);
        
     }
 }
