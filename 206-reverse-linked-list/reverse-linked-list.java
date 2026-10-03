@@ -14,8 +14,8 @@ class Solution {
         {
             return head;
         }
-        ListNode prev=head;
-        ListNode curr=head.next;
+        ListNode prev=null;
+        ListNode curr=head;
         while(curr!=null)
         {
             ListNode next=curr.next;
@@ -23,7 +23,7 @@ class Solution {
             prev=curr;
             curr=next;
         }
-        head.next=null;
         return prev;
+
     }
 }
