@@ -20,7 +20,7 @@ class Solution {
         }
         if(list2==null)
         {
-            return  list1;
+            return list1;
         }
         ListNode head;
         if(list1.val<=list2.val)
@@ -42,8 +42,7 @@ class Solution {
                 curr=curr.next;
                 list1=list1.next;
             }
-            else
-            {
+            else{
                 curr.next=list2;
                 curr=curr.next;
                 list2=list2.next;
