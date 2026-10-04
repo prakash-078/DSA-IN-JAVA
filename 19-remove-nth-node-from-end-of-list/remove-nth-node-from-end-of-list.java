@@ -17,16 +17,16 @@ class Solution {
             curr=curr.next;
             size++;
         }
-        if(n==size)
+        if(size==n)
         {
-           return head.next;
+            return head.next;
         }
         curr=head;
-       for(int i=1;i<size-n;i++)
-       {
-          curr=curr.next;
-       }
-       curr.next=curr.next.next;
-       return head;
+        for(int i=1;i<size-n;i++)
+        {
+            curr=curr.next;
+        }
+        curr.next=curr.next.next;
+        return head;
     }
 }
