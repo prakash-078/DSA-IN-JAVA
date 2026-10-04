@@ -35,5 +35,6 @@ class Solution {
             right--;
         }
         list.get(left).next=null;
+
     }
 }
