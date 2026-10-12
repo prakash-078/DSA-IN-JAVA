@@ -10,42 +10,30 @@
  */
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
-        if(head==null)
+        if(head==null || k==0)
         {
             return head;
         }
-        List<Integer> list=new ArrayList<>();
+
+        int size=0;
         ListNode curr=head;
+        ListNode prev=head;;
         while(curr!=null)
         {
-            list.add(curr.val);
+            size++;
+            prev=curr;
             curr=curr.next;
         }
-        k=k%list.size();
-
-        reverse(list,0,list.size()-1);
-        reverse(list,0,k-1);
-        reverse(list,k,list.size()-1);
-
+        prev.next=head;
         curr=head;
-        int index=0;
-        while(curr!=null)
+        k=k%size;
+        for(int i=0;i<size-k-1;i++)
         {
-            curr.val=list.get(index++);
             curr=curr.next;
         }
-        return head;
+        ListNode newhead=curr.next;
+        curr.next=null;
+        return newhead;
 
-    }
-    public static void reverse(List<Integer> list,int left,int right)
-    {
-        while(left<right)
-        {
-            int temp=list.get(left);
-            list.set(left,list.get(right));
-            list.set(right,temp);
-            left++;
-            right--;
-        }
     }
 }
