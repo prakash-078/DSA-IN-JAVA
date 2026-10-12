@@ -14,24 +14,20 @@ class Solution {
         {
             return head;
         }
-        List<ListNode> list=new ArrayList<>();
-        ListNode curr=head;
-        while(curr!=null)
-        {
-            list.add(curr);
-            curr=curr.next;
-        }
         ListNode dummyhead=new ListNode(0);
         dummyhead.next=head;
         ListNode prev=dummyhead;
-        for(int i=0;i<list.size()-1;i=i+2)
+        while(head!=null && head.next!=null)
         {
-            ListNode next=list.get(i+1).next;
-            list.get(i+1).next=list.get(i);
-            list.get(i).next=next;
-            prev.next=list.get(i+1);
-            prev=list.get(i);
+            ListNode next1=head.next;
+            ListNode next2=head.next.next;
+            next1.next=head;
+            prev.next=next1;
+            head.next=next2;
+            prev=head;
+            head=head.next;
         }
         return dummyhead.next;
+        
     }
 }
