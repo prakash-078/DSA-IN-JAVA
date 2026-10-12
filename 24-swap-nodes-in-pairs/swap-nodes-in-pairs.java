@@ -14,7 +14,6 @@ class Solution {
         {
             return head;
         }
-
         List<ListNode> list=new ArrayList<>();
         ListNode curr=head;
         while(curr!=null)
