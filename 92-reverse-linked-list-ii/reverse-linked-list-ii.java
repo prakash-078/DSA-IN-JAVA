@@ -14,15 +14,16 @@ class Solution {
       {
         return head;
       }
-      ListNode dummy=new ListNode(0);
-      dummy.next=head;
-      ListNode prevleft=dummy;
+      ListNode dummyhead=new ListNode(0);
+      dummyhead.next=head;
+      ListNode prevleft=dummyhead;
       for(int i=1;i<left;i++)
       {
         prevleft=prevleft.next;
       }
-      ListNode curr=prevleft.next;
+
       ListNode prev=null;
+      ListNode curr=prevleft.next;
       for(int i=0;i<=right-left;i++)
       {
         ListNode next=curr.next;
@@ -30,9 +31,10 @@ class Solution {
         prev=curr;
         curr=next;
       }
-      ListNode leftnode=prevleft.next;
+
+      ListNode x=prevleft.next;
+      x.next=curr;
       prevleft.next=prev;
-      leftnode.next=curr;
-      return dummy.next;
+      return dummyhead.next;
     }
 }
