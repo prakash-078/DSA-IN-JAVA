@@ -33,19 +33,21 @@ class Solution {
             head=list2;
             list2=list2.next;
         }
+
         ListNode curr=head;
         while(list1!=null && list2!=null)
         {
             if(list1.val<=list2.val)
             {
                 curr.next=list1;
-                curr=curr.next;
                 list1=list1.next;
-            }
-            else{
-                curr.next=list2;
                 curr=curr.next;
+            }
+            else
+            {
+                curr.next=list2;
                 list2=list2.next;
+                curr=curr.next;
             }
         }
         if(list1!=null)
@@ -56,6 +58,7 @@ class Solution {
         {
             curr.next=list2;
         }
+
         return head;
     }
 }
